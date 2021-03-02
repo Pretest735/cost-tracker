@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name="cost_activity_list")
+@Table(name="activity_list")
 @Data
 public class Activity {
     @Id
@@ -19,14 +19,14 @@ public class Activity {
     @Column(name="user_id")
     private Long userId;
 
-    @Column(name="user_name")
-    private String userName;
+    @Column(name="item_id")
+    private Long itemId;
 
-    @Column(name="excludes")
-    private String excludes;
+    @Column(name="included_ids")
+    private String includedIds;
 
-    @Column(name="description")
-    private String description;
+    @Column(name="amount")
+    private String amount;
 
     @Column(name="is_active")
     private boolean isActive;

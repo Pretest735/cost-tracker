@@ -19,12 +19,6 @@ public class User {
     @Column(name="user_name")
     private String userName;
 
-    @Column(name="charged")
-    private Long charged;
-
-    @Column(name="paid")
-    private Long paid;
-
     @Column(name="is_active")
     private boolean isActive;
 
