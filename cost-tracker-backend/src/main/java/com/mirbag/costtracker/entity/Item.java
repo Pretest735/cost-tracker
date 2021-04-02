@@ -1,5 +1,6 @@
 package com.mirbag.costtracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,8 +15,8 @@ public class Item {
     private Long itemId;
 
     @Column(name="item_name")
-    private Long itemName;
+    private String itemName;
 
     @Column(name="is_active")
-    private Long isActive;
+    private Boolean isActive;
 }
