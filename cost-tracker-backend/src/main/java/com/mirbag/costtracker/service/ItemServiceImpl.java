@@ -1,6 +1,7 @@
 package com.mirbag.costtracker.service;
 
 import com.mirbag.costtracker.entity.Item;
+import com.mirbag.costtracker.entity.User;
 import com.mirbag.costtracker.repository.ItemRepository;
 import com.mirbag.costtracker.utilities.ResponseModel;
 import com.mirbag.costtracker.utilities.UtilityFunctions;
@@ -51,5 +52,22 @@ public class ItemServiceImpl implements ItemService{
         }
     }
 
-
+    @Override
+    public ResponseModel<Item> deleteItem(Long id) {
+        Optional<Item> deleteItem = itemRepository.findById(id);
+        try {
+            if(deleteItem.isPresent()) {
+                deleteItem.get().setIsActive(false);
+                itemRepository.save(deleteItem.get());
+                return utils.generateResponse("Succes", "Item " + deleteItem.get().getItemName() + " is removed.",
+                        deleteItem);
+            }
+            else {
+                return utils.generateResponse("fail", "Failed to remove Item.", null);
+            }
+        }
+        catch (Exception e) {
+            return utils.generateResponse("fail", "Failed to remove Item.", null);
+        }
+    }
 }

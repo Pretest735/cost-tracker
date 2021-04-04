@@ -1,6 +1,7 @@
 package com.mirbag.costtracker.controller;
 
 import com.mirbag.costtracker.entity.Item;
+import com.mirbag.costtracker.entity.User;
 import com.mirbag.costtracker.repository.ItemRepository;
 import com.mirbag.costtracker.service.ItemService;
 import com.mirbag.costtracker.utilities.ResponseModel;
@@ -31,5 +32,10 @@ public class ItemController {
     @PostMapping(value = "/update")
     private ResponseModel<Item> updateItem(@RequestBody Item item) {
         return itemService.updateItem(item);
+    }
+
+    @DeleteMapping(value= "/delete/{id}")
+    private ResponseModel<Item> deleteUser(@PathVariable Long id) {
+        return itemService.deleteItem(id);
     }
 }
