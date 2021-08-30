@@ -1,8 +1,6 @@
 package com.mirbag.costtracker.entity;
 
 import lombok.Data;
-import lombok.Generated;
-import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -13,21 +11,19 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="user_id")
     private Long id;
 
     @Column(name="user_name")
     private String userName;
 
-    @Column(name="charged")
-    private Long charged;
+    @Column(name="is_admin")
+    private Boolean isAdmin;
 
-    @Column(name="paid")
-    private Long paid;
+    @Column(name="pass_word")
+    private String passWord;
 
     @Column(name="is_active")
-    private boolean isActive;
+    private Boolean isActive;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user_id")
-//    private Set<Activity> activities;
 }

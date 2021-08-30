@@ -23,5 +23,7 @@ public class ActivityController {
     @PostMapping(value = "/add-activity")
     private Activity addActivity(@RequestBody Activity activity) {
         List<User> users = userRepository.findByIsActiveTrue();
+        Activity activity1 = new Activity();
+        return activity1;
     }
 }
