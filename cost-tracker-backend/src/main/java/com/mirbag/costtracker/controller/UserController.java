@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
     @Autowired
     private UserRepository userRepo;
@@ -19,17 +19,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value="/list")
+    @GetMapping(value="/user-list")
     private List<User> getUserList() {
         return userRepo.findByIsActiveTrue();
     }
 
-    @PostMapping(value="/add")
+    @PostMapping(value="/add-user")
     private ResponseModel<User> addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
 
-    @PostMapping(value = "/update")
+    @PostMapping(value = "/update-user")
     private ResponseModel<User> updateUser(@RequestBody User user) {
         return userService.updateUser(user);
     }
