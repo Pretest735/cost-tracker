@@ -15,7 +15,7 @@ export class UserDataService {
   ) { }
 
   getUserList(): Observable<User[]> {
-    let url = `localhost:8081/api/users/user-list`;
+    let url = `http://localhost:8081/api/users/user-list`;
 
     return this.httpClient.get<User[]>(url).pipe(
       retry(1)
@@ -26,7 +26,7 @@ export class UserDataService {
 export interface User {
   id: number,
   userName: string,
-  charged: number,
-  paid: number,
+  passWord: string,
+  isAdmin: boolean,
   isActive: boolean
 }

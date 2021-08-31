@@ -17,11 +17,11 @@ public class User {
     @Column(name="user_name")
     private String userName;
 
-    @Column(name="is_admin")
-    private Boolean isAdmin;
-
     @Column(name="pass_word")
     private String passWord;
+    
+    @Column(name="is_admin")
+    private Boolean isAdmin;
 
     @Column(name="is_active")
     private Boolean isActive;
