@@ -19,15 +19,15 @@ public class Activity {
     @Column(name="user_id")
     private Long userId;
 
-    @Column(name="item_id")
-    private Long itemId;
+    @Column(name="description")
+    private String description;
 
-    @Column(name="included_ids")
-    private String includedIds;
+    @Column(name="included_user_ids")
+    private String includedUserIds;
 
     @Column(name="amount")
-    private String amount;
+    private Long amount;
 
     @Column(name="is_active")
-    private boolean isActive;
+    private Boolean isActive;
 }
